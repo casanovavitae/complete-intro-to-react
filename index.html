@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Video App</title>
+  <meta charset="UTF-8">
+  <meta name="author" content="SitePoint">
+</head>
+
+<body>
+    <div id="app"></div>
+    <script src="node_modules/react/dist/react.js"></script>
+    <script src="node_modules/react-dom/dist/react-dom.js"></script>
+    <script>
+
+        const InerTitle = function(props){
+            return React.createElement('h1',{style : {color: props.color }},props.title)
+        }
+
+        const InnerComponent = function () {
+            return React.createElement('div',null,
+                React.createElement(InerTitle,{title: 'title 1', color: 'YellowGreen'}),
+                React.createElement(InerTitle,{title: 'title 2', color: 'GreenYellow'}),
+                React.createElement(InerTitle,{title: 'title 3', color: 'peru'}),
+                React.createElement(InerTitle,{title: 'title 4', color: 'LimeGreen'})
+            )
+        }
+
+        ReactDOM.render(
+            React.createElement(InnerComponent),
+            document.getElementById('app')
+        )
+
+    </script>
+</body>
+</html>
